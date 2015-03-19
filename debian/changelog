@@ -1,0 +1,5 @@
+memtailor (1.0~git20130809-1) unstable; urgency=low
+
+  * Initial release (Closes: #780766).
+
+ -- Doug Torrance <dtorrance@monmouthcollege.edu>  Wed, 18 Mar 2015 01:03:13 -0500

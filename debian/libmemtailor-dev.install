@@ -1,0 +1,4 @@
+usr/include/*
+usr/lib/*/libmemtailor.a
+usr/lib/*/libmemtailor.so
+usr/lib/*/pkgconfig/memtailor.pc

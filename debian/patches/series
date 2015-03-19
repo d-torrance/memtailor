@@ -1,0 +1,2 @@
+find_gtest.patch
+link_pthread.patch

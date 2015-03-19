@@ -1,0 +1,15 @@
+Description: Link against pthread.
+ Avoid FTBFS due to several "undefined reference to `pthread_*' errors.
+Author: Doug Torrance <dtorrance@monmouthcollege.edu>
+Last-Update: 2015-0318
+
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -47,6 +47,7 @@
+ unittest_SOURCES=src/test/ArenaTest.cpp src/test/BufferPoolTest.cpp	\
+   src/test/MemoryBlocksTest.cpp src/test/testMain.cpp				\
+   src/test/gtestInclude.cpp
++unittest_LDADD = -lpthread
+ 
+ else
+ 
