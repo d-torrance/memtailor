@@ -5,6 +5,9 @@
 override_dh_auto_configure:
 	dh_auto_configure -- GTEST_PATH=/usr/src
 
+override_dh_strip:
+	dh_strip --dbg-package=libmemtailor-dbg
+
 get-orig-source:
 	wget https://github.com/broune/memtailor/archive/master.tar.gz
 	git checkout upstream

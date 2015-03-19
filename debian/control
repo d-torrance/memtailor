@@ -28,3 +28,14 @@ Description: C++ library of special purpose memory allocators (shared library)
  offers an arena allocator and a memory pool.
  .
  This package contains the shared library.
+
+Package: libmemtailor-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: libmemtailor0 (= ${binary:Version}), ${misc:Depends}
+Description: C++ library of special purpose memory allocators (debug symbols)
+ Memtailor is a C++ library of special purpose memory allocators. It currently
+ offers an arena allocator and a memory pool.
+ .
+ This package contains the debugging symbols.
