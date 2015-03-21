@@ -13,6 +13,7 @@ Package: libmemtailor-dev
 Section: libdevel
 Architecture: any
 Depends: libmemtailor0 (= ${binary:Version}), ${misc:Depends}
+Multi-Arch: same
 Description: C++ library of special purpose memory allocators (developer tools)
  Memtailor is a C++ library of special purpose memory allocators. It currently
  offers an arena allocator and a memory pool.
@@ -23,6 +24,7 @@ Package: libmemtailor0
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
 Description: C++ library of special purpose memory allocators (shared library)
  Memtailor is a C++ library of special purpose memory allocators. It currently
  offers an arena allocator and a memory pool.
@@ -34,6 +36,7 @@ Architecture: any
 Section: debug
 Priority: extra
 Depends: libmemtailor0 (= ${binary:Version}), ${misc:Depends}
+Multi-Arch: same
 Description: C++ library of special purpose memory allocators (debug symbols)
  Memtailor is a C++ library of special purpose memory allocators. It currently
  offers an arena allocator and a memory pool.
