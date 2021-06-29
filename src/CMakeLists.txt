@@ -26,7 +26,7 @@ target_include_directories(memtailor PUBLIC
 
 include(CTest)
 if(BUILD_TESTING)
-  add_executable(memtailor-gtests
+  add_executable(memtailor-unit-tests
     test/ArenaTest.cpp
     test/BufferPoolTest.cpp
     test/MemoryBlocksTest.cpp
@@ -36,13 +36,14 @@ if(BUILD_TESTING)
   ################################
   # add gtest testing ############
   ################################
-  find_package(GTest)
+  if(NOT GTEST_FOUND)
+    find_package(GTest)
+  endif()
   include(GoogleTest)
-  gtest_discover_tests(memtailor-gtests)
+  gtest_discover_tests(memtailor-unit-tests TEST_PREFIX unit-tests:)
 
   if(GTEST_FOUND)
-    target_link_libraries(memtailor-gtests memtailor GTest::GTest GTest::Main)
-    target_include_directories(memtailor-gtests PRIVATE ${GTEST_INCLUDE_DIR})
+    target_link_libraries(memtailor-unit-tests memtailor GTest::GTest GTest::Main)
   else()
     include(FetchContent)
     FetchContent_Declare(googletest
@@ -51,8 +52,8 @@ if(BUILD_TESTING)
       )
     FetchContent_MakeAvailable(googletest)
 
-    target_link_libraries(memtailor-gtests memtailor gtest)
-    target_include_directories(memtailor-gtests PRIVATE
+    target_link_libraries(memtailor-unit-tests memtailor gtest)
+    target_include_directories(memtailor-unit-tests PRIVATE
       ${googletest_SOURCE_DIR}/googletest/include
       ${googletest_SOURCE_DIR}/googletest/src
       ${googletest_SOURCE_DIR}/googletest
