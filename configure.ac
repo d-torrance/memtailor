@@ -1,6 +1,6 @@
+# Note: also update version in CMakeLists.txt and src/memtailor.cpp
 dnl AC_INIT sets up autoconf and must be first macro.
 AC_INIT([memtailor], [1.0]) # package, version, bug-report-email
-AC_DEFINE_UNQUOTED(MEMTAILOR_VERSION, "$PACKAGE_VERSION")
 
 # set up information about directories
 AC_CONFIG_MACRO_DIR([build/autotools/m4]) # directory of extra autoconf macroes

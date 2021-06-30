@@ -15,8 +15,6 @@ add_library(memtailor STATIC
   memtailor/stdinc.h
   )
 
-target_compile_definitions(memtailor PRIVATE MEMTAILOR_VERSION="${MEMTAILOR_VERSION}")
-
 target_link_libraries(memtailor Threads::Threads)
 
 target_include_directories(memtailor PUBLIC
