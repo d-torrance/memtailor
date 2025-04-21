@@ -3,7 +3,7 @@
 ACLOCAL_AMFLAGS = -I build/autotools/m4
 
 # Options passed to the C PreProcessor (CPP), NOT the C Plus Plus compiler.
-AM_CPPFLAGS = -I${top_srcdir}/ $(DEPS_CFLAGS)
+AM_CPPFLAGS = -I${top_srcdir}/
 
 # tell Libtool what the name of the library is.
 lib_LTLIBRARIES = libmemtailor.la
@@ -41,17 +41,16 @@ TESTS=unittest
 check_PROGRAMS=$(TESTS)
 
 unittest_CXXFLAGS = -I$(top_srcdir)/src/ -std=gnu++17
-unittest_LDADD = $(top_builddir)/libmemtailor.la -lpthread
+unittest_LDADD = $(top_builddir)/libmemtailor.la -lpthread -lgtest
 
 # test_LIBS=
 unittest_SOURCES=src/test/ArenaTest.cpp src/test/BufferPoolTest.cpp	\
-  src/test/MemoryBlocksTest.cpp src/test/testMain.cpp				\
-  src/test/gtestInclude.cpp
+  src/test/MemoryBlocksTest.cpp src/test/testMain.cpp
 
 else
 
 check:
 	@echo
-	@echo "Configure did not locate gtest, so unittests cannot be run."
+	@echo "configured without gtest, so unittests cannot be run."
 
 endif
