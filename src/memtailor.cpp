@@ -5,5 +5,5 @@
 
 extern "C" {
   void libmemtailorIsPresent(void) {}
-  char MEMTAILOR_VERSION_STRING[] = "1.0";
+  char MEMTAILOR_VERSION_STRING[] = PACKAGE_VERSION;
 }
