@@ -12,13 +12,10 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get install -y libgtest-dev
-      - name: Build memtailor
+      - name: Build and check memtailor
         run: |
-          ./autogen.sh
-          cd build/autotools
-          ../../configure
-          make
-      - name: Check memtailor
-        run: |
-          cd build/autotools
+          mkdir BUILD
+          cd BUILD
+          ../autogen.sh
+          ../configure
           make distcheck
