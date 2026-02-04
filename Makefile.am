@@ -7,6 +7,7 @@ AM_CPPFLAGS = -I${top_srcdir}/
 
 # tell Libtool what the name of the library is.
 lib_LTLIBRARIES = libmemtailor.la
+libmemtailor_la_LDFLAGS = -version-info @MEMTAILOR_SO_VERSION@
 
 # the sources that are built to make the library
 libmemtailor_la_SOURCES =		\
